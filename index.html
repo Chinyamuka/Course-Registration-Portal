@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ICT461 Course Registration</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>ICT461 Course Registration</h1>
+        <p>Student Course Registration System</p>
+    </header>
+
+    <main>
+
+        <!-- Registration Form -->
+        <section>
+            <h2>Register for a Course</h2>
+
+            <form id="registrationForm">
+
+                <div>
+                    <label for="name">Student Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="studentId">Student ID</label>
+                    <input
+                        type="text"
+                        id="studentId"
+                        name="studentId"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="programme">Programme</label>
+                    <input
+                        type="text"
+                        id="programme"
+                        name="programme"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="course">Course</label>
+
+                    <select id="course" name="course" required>
+                        <option value="">Loading courses...</option>
+                    </select>
+                </div>
+
+                <button type="submit">
+                    Register
+                </button>
+
+            </form>
+
+            <div id="message" role="alert"></div>
+        </section>
+
+        <!-- Registration Lookup -->
+        <section>
+            <h2>Find Registration</h2>
+
+            <form id="lookupForm">
+
+                <label for="registrationId">
+                    Registration ID
+                </label>
+
+                <input
+                    type="number"
+                    id="registrationId"
+                    min="1"
+                    required
+                >
+
+                <button type="submit">
+                    Find Registration
+                </button>
+
+            </form>
+
+            <div id="registrationResult"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>ICT461 Web Standards and HTTP Fundamentals</p>
+    </footer>
+
+    <script src="api.js"></script>
+
+</body>
+</html>
