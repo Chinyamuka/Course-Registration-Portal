@@ -247,7 +247,7 @@ app.delete("/api/registrations/:id", (req, res) => {
 
 // --------------------------------------------------
 // GET /inspect
-// Diagnostic endpoint for examining HTTP requests.
+// Inspect a GET request.
 // --------------------------------------------------
 
 app.get("/inspect", (req, res) => {
@@ -259,6 +259,23 @@ app.get("/inspect", (req, res) => {
         body: req.body
     });
 });
+
+
+// --------------------------------------------------
+// POST /inspect
+// Inspect a POST request and its JSON body.
+// --------------------------------------------------
+
+app.post("/inspect", (req, res) => {
+    res.status(200).json({
+        method: req.method,
+        url: req.originalUrl,
+        headers: req.headers,
+        query: req.query,
+        body: req.body
+    });
+});
+
 
 
 // --------------------------------------------------
