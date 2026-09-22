@@ -25,6 +25,7 @@ const courses = [
 
 // In-memory registration records
 const registrations = [];
+let nextRegistrationId = 1;
 
 // --------------------------------------------------
 // GET /api/courses
@@ -96,7 +97,7 @@ app.post("/api/registrations", (req, res) => {
     }
 
     const registration = {
-        id: registrations.length + 1,
+        id: nextRegistrationId++,
         name,
         studentId,
         programme,
